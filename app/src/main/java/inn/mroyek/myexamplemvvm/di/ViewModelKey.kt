@@ -1,4 +1,4 @@
-package inn.mroyek.myexamplemvvm.util
+package inn.mroyek.myexamplemvvm.di
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

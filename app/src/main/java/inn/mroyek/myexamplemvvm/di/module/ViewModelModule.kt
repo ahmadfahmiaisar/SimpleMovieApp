@@ -7,9 +7,8 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import inn.mroyek.myexamplemvvm.di.factory.ViewModelFactory
 import inn.mroyek.myexamplemvvm.ui.MovieViewModel
-import inn.mroyek.myexamplemvvm.util.ViewModelKey
+import inn.mroyek.myexamplemvvm.di.ViewModelKey
 
-/*
 @Module
 abstract class ViewModelModule {
 
@@ -21,4 +20,4 @@ abstract class ViewModelModule {
     @ViewModelKey(MovieViewModel::class)
     internal abstract fun provideMovieViewModel(viewModel: MovieViewModel) : ViewModel
 
-}*/
+}

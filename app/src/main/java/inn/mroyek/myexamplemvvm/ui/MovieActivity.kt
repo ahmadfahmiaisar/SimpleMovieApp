@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
+import dagger.android.AndroidInjection
 import inn.mroyek.myexamplemvvm.R
 import inn.mroyek.myexamplemvvm.di.module.injector
 import inn.mroyek.myexamplemvvm.model.PopularMovie
@@ -19,20 +20,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MovieActivity : AppCompatActivity() {
-    /*@Inject
+    @Inject
     lateinit var viewmodelFactory: ViewModelProvider.Factory
-    private lateinit var movieViewModel : MovieViewModel*/
-    private val movieViewModel: MovieViewModel by lazy {
+    private lateinit var movieViewModel : MovieViewModel
+    /*private val movieViewModel: MovieViewModel by lazy {
         ViewModelProviders.of(this, injector.postViewModelFactory())
             .get(MovieViewModel::class.java)
-    }
+    }*/
 
     private val movieAdapter = GroupAdapter<GroupieViewHolder>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        movieViewModel = ViewModelProviders.of(this, viewmodelFactory).get(MovieViewModel::class.java)
+        AndroidInjection.inject(this)
+        movieViewModel = ViewModelProviders.of(this, viewmodelFactory).get(MovieViewModel::class.java)
         initView()
         movieViewModel.loadMovie()
         Log.d("ERR HASIL", Gson().toJson(movieViewModel.loadMovie()))
@@ -64,9 +66,9 @@ class MovieActivity : AppCompatActivity() {
 
     }
 
-    private fun funLoading(showProgress: Boolean) {
+    /*private fun funLoading(showProgress: Boolean) {
         Toast.makeText(this, "$showProgress", Toast.LENGTH_LONG).show()
-    }
+    }*/
 
     private fun initView() {
         rv_movie.apply {

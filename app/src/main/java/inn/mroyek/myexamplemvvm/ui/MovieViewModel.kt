@@ -1,11 +1,9 @@
 package inn.mroyek.myexamplemvvm.ui
 
-import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModel
-import com.google.gson.Gson
 import inn.mroyek.myexamplemvvm.data.repository.MovieRepository
 import inn.mroyek.myexamplemvvm.model.PopularMovie
 import io.reactivex.android.schedulers.AndroidSchedulers

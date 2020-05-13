@@ -4,6 +4,7 @@ import inn.mroyek.myexamplemvvm.data.MovieApiServices
 import inn.mroyek.myexamplemvvm.model.PopularMovie
 import io.reactivex.Flowable
 import javax.inject.Inject
+/*
 
 class MovieRepositoryImpl @Inject constructor(private val services: MovieApiServices) : MovieRepository {
     override fun getMovie(): Flowable<List<PopularMovie>> {
@@ -14,4 +15,4 @@ class MovieRepositoryImpl @Inject constructor(private val services: MovieApiServ
             .toFlowable()
     }
 
-}
+}*/

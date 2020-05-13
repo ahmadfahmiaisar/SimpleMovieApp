@@ -19,8 +19,7 @@ import javax.inject.Singleton
         NetworkModule::class,
         ActivityModule::class,
 //        FragmentModule::class,
-        RepositoryModule::class
-//        ViewModelModule::class
+        ViewModelModule::class
     ]
 )
 interface AppComponent {
@@ -34,5 +33,5 @@ interface AppComponent {
     }
 
     fun inject(app: MyApp)
-    fun postViewModelFactory() : ViewModelFactory<MovieViewModel>
+//    fun postViewModelFactory() : ViewModelFactory<MovieViewModel>
 }

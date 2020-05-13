@@ -12,13 +12,13 @@ import inn.mroyek.myexamplemvvm.di.component.DaggerAppComponent
 import inn.mroyek.myexamplemvvm.di.module.DaggerComponentProvider
 import javax.inject.Inject
 
-class MyApp : Application(), DaggerComponentProvider, HasActivityInjector, HasSupportFragmentInjector {
+class MyApp : Application(), HasActivityInjector {
 
     @Inject
     lateinit var activityInjector: DispatchingAndroidInjector<Activity>
 
-    @Inject
-    lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
+    /*@Inject
+    lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>*/
 
     override fun onCreate() {
         super.onCreate()
@@ -29,12 +29,12 @@ class MyApp : Application(), DaggerComponentProvider, HasActivityInjector, HasSu
     }
     override fun activityInjector(): AndroidInjector<Activity> = activityInjector
 
-    override fun supportFragmentInjector(): AndroidInjector<Fragment> = fragmentInjector
+//    override fun supportFragmentInjector(): AndroidInjector<Fragment> = fragmentInjector
 
-    override val appComponent: AppComponent by lazy {
+   /* override val appComponent: AppComponent by lazy {
         DaggerAppComponent.builder()
             .application(this)
             .build()
-    }
+    }*/
 
 }
